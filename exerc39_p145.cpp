@@ -2,26 +2,30 @@
  using namespace std;
 
  int primo(int num);
+ int divisivel(int num, int i);
 
 
  int main(){
 
     int valor;
-    cout << "Digite o numero desejado: ";
     cin >> valor;
-    cout << "Valor lido:" << valor << endl;
-    cout << "O numero: " << primo(primo(valor)) << endl;
+    cout << valor << ": " << primo(valor) << endl;
 
     }
 
 int primo(int num){
 
 
-    for(int i=1;i < num;i++){
-        if(num%i != 0){
-        return 0;
+    for(int i=2;i < num;i++){
+        if(divisivel(num, i)){
+          cout << num << " : " << i<< endl;
+          return 0;
         }
     }
 
     return 1;
+}
+
+int divisivel(int num, int i){
+  return num%i == 0;
 }
